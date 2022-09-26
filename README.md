@@ -100,7 +100,7 @@ THEN I am able to successfully create, update, and delete data in my database
 ---
 > **Note**: The following walkthrough video demonstrates the ```POST```, ```PUT```, and ```DELETE``` routes for products & tags being tested in ```Insomnia```:
 
-https://aasports89.github.io/employee-tracker-keeper/
+https://aasports89.github.io/e-commerce-git-app/
 
 ## GitHUB Repository
 ---
