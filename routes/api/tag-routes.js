@@ -5,7 +5,8 @@
 //API ROUTE --> TAGS//
   router.get('/', (req, res) => {
 //FIND TAGS --> PRODUCTS//
-  Tag.findAll({
+  Tag.findAll
+  ({
     include:
     {
       model: Product
@@ -41,7 +42,7 @@
     });
   });
 
-router.post('/', (req, res) => {
+  router.post('/', (req, res) => {
 //ADD TAG//
   Tag.create({
     tag_name: req.body.tag_name
@@ -53,7 +54,7 @@ router.post('/', (req, res) => {
     });
   });
 
-router.put('/:id', (req, res) => {
+  router.put('/:id', (req, res) => {
  //UPDATE TAG --> ID//
   Tag.update(
     {

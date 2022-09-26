@@ -56,10 +56,10 @@
   router.post('/', (req, res) => {
 //****************************** REQ EXAMPLE ******************************//
     // {
-    //   product_name: "Hockey Mask",
-    //   price: 200.00,
-    //   stock: 3,
-    //   tagIds: [1, 2, 3, 4]
+    //   "product_name": "Hockey Mask",
+    //   "price": 200.00,
+    //   "stock": 3,
+    //   "tagIds": [1, 2, 3, 4]
     // }
     
   Product.create(req.body)
@@ -126,7 +126,7 @@
     });
   });
 
-router.delete('/:id', (req, res) => {
+  router.delete('/:id', (req, res) => {
 //DELETE SINGLE PRODUCT --> ID//
   Product.destroy({
     where: {
