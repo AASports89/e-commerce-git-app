@@ -6,24 +6,24 @@
 
 //PRODUCTS --> CATEGORIES//
   Product.belongsTo(Category, {
-  foreignKey: 'category_id',
+  foreignKey: "category_id",
   });
 
 //CATEGORY --> PRODUCTS//
   Category.hasMany(Product, {
-  foreignKey: 'category_id',
+  foreignKey: "category_id",
   });
 
 //PRODUCT --> TAGS//
   Product.belongsToMany(Tag, {
     through: ProductTag,
-    foreignKey: 'product_id'
+    foreignKey: "product_id"
   });
 
 //PRODUCT-TAGS//
   Tag.belongsToMany(Product, {
     through: ProductTag,
-    foreignKey: 'tag_id'
+    foreignKey: "tag_id"
   });
 
 module.exports = {

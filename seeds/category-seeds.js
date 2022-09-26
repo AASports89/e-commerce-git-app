@@ -1,5 +1,5 @@
 //DEPENDENCY//
-  const { Category } = require('../models');
+  const {Category} = require('../models');
 
   const categoryData = [
     {
