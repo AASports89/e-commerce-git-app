@@ -76,29 +76,29 @@ THEN I am able to successfully create, update, and delete data in my database
  ```
  node server.js
  ```
- in the terminal cmd to install & run **'E-Commerce Git App'**.
+ in the terminal cmd to install & run **'E-Commerce Git App'**, see image below:
 
-## Mock-Up
----
-> **Note**: The following animation shows the application's ```GET``` routes to return all categories, all products, and all tags being tested in ```Thunder Client ⚡```:
-
-![In Thunder Client ⚡, the user tests “GET tags,” “GET Categories,” and “GET All Products.”.](./Assets/13-orm-homework-demo-01.gif)
-
-The following animation shows the application's GET routes to return a single category, a single product, and a single tag being tested in ```Thunder Client ⚡```:
-
-![In Thunder Client ⚡, the user tests “GET tag by id,” “GET Category by ID,” and “GET One Product.”](./Assets/13-orm-homework-demo-02.gif)
-
-The following animation shows the application's ```POST```, ```PUT```, and ```DELETE``` routes for categories being tested in ```Thunder Client ⚡```:
-
-![In Thunder Client ⚡, the user tests “DELETE Category by ID,” “CREATE Category,” and “UPDATE Category.”](./Assets/13-orm-homework-demo-03.gif)
-
-* **Installation:**
+ **Installation Guide:**
 
 <img src="./images/install.jpg">
 
+## Mock-Up
+---
+> **Note:**  The following animation shows the application's ```GET``` routes to return all categories, all products, and all tags being tested in ```Insomnia```:
+
+> **'GET' all categories, products & tags:** ![In ```Insomnia```, the user tests “GET tags,” “GET Categories,” and “GET All Products.”.](./images/GET-ALL.gif)
+
+> **Note:** The following animation shows the application's GET routes to return a single category, a single product, and a single tag being tested in ```Insomnia```:
+
+> **'GET' single category, product & tag:** ![In ```Insomnia```, the user tests “GET tag by id,” “GET Category by ID,” and “GET One Product.”](./images/GET-ONE.gif)
+
+> **Note:** The following animation shows the application's ```POST```, ```PUT```, and ```DELETE``` routes for categories being tested in ```Insomnia```:
+
+> **'DELETE', 'ADD' & 'UPDATE' category:** ![In ```Insomnia```, the user tests “DELETE Category by ID,” “CREATE Category,” and “UPDATE Category.”](./images/DEL-ADD-UPDT.gif)
+
 ## Video Walkthrough
 ---
-> **Note**: The following walkthrough video demonstrates the POST, PUT, and DELETE routes for products and tags being tested in ```Thunder Client ⚡```:
+> **Note**: The following walkthrough video demonstrates the ```POST```, ```PUT```, and ```DELETE``` routes for products & tags being tested in ```Insomnia```:
 
 https://aasports89.github.io/employee-tracker-keeper/
 
