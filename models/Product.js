@@ -4,7 +4,7 @@
   const sequelize = require('../config/connection');
 
 //INITIALIZE PRODUCT MODELS --> SEQUELIZE//
-  class Product extends Model { }
+  class Product extends Model {}
 
 //FIELDS & RULES --> PRODUCT MODEL//
   Product.init
