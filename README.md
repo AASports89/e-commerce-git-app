@@ -49,7 +49,7 @@ THEN I am able to successfully create, update, and delete data in my database
 ```
 ## Installation
 ----
-> **Important:** Once, the source code has been cloned from the repository @https://github.com/AASports89/e-commerce-git-app & the ```mySQL``` database set up:
+> **Important:** Once, the source code has been cloned from the repository @https://github.com/AASports89/e-commerce-git-app & the ```MySQL``` database set up:
 
  Enter the following:
 
@@ -67,6 +67,10 @@ THEN I am able to successfully create, update, and delete data in my database
  -followed by-
  ```
  npm i sequelize
+ ```
+ -followed by-
+ ```
+ node seed/index.js
  ```
  -followed by-
  ```
@@ -90,19 +94,7 @@ The following animation shows the application's ```POST```, ```PUT```, and ```DE
 
 * **Installation:**
 
-<img src="./images/install.png">
-
-* **App Prompt(s):**
-
-<img src="./images/promptMenu.png">
-
-* **Error Hard Stop:**
-
-<img src="./images/hardStop.png">
-
-* **Access Data:**
-
-<img src="./images/dataView.png">
+<img src="./images/install.jpg">
 
 ## Video Walkthrough
 ---
