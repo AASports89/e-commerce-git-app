@@ -54,7 +54,7 @@
 
 //ADD PRODUCT//
   router.post('/', (req, res) => {
-//****************************** REQ EXAMPLE ******************************//
+//****************************** JSON FORMAT EXAMPLE ******************************//
     // {
     //   "product_name": "Hockey Mask",
     //   "price": 200.00,
@@ -82,63 +82,58 @@
       console.log(err);
       res.status(400).json(err);
     });
-});
-
+  });
 //UPDATE PRODUCT//
   router.put('/:id', (req, res) => {
-//UPDATE PRODUCT DATA//
-  Product.update(req.body, {
-    where: {
+    Product.update(req.body, {
+      where: {
       id: req.params.id,
     },
   })
-    .then((product) => {
-//FIND PRODUCTS --> PRODUCT-TAG//
-      return ProductTag.findAll({ where: { product_id: req.params.id } });
-    })
-    .then((productTags) => {
-//GET LIST --> PRODUCT IDs//
-      const productTagIds = productTags.map(({ tag_id }) => tag_id);
-//ADD LIST --> TAGS//
-      const newProductTags = req.body.tagIds
-        .filter((tag_id) => !productTagIds.includes(tag_id))
-        .map((tag_id) => {
+  .then((product) => {
+//FIND ALL RELATED --> TAGS//
+  return ProductTag.findAll({ where: { product_id: req.params.id } });
+  })
+  .then((productTags) => {
+//GET LISTS --> TAGS//
+  const productTagIds = productTags.map(({ tag_id }) => tag_id);
+//ADD FILTERED TAGS LIST//
+  const newProductTags = req.body.tagIds
+      .filter((tag_id) => !productTagIds.includes(tag_id))
+      .map((tag_id) => {
           return {
-            product_id: req.params.id,
-            tag_id,
+              product_id: req.params.id,
+              tag_id,
           };
-        });
-//REMOVE PRODUCTS --> PRODUCT-TAGS//
-      const productTagsToRemove = productTags
-        .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
-        .map(({ id }) => id);
-
-//DESTROY & BULK CREATE//
-      return Promise.all([
-        ProductTag.destroy({ where: { id: productTagsToRemove } }),
-        ProductTag.bulkCreate(newProductTags),
-      ]);
-    })
+      });
+//REMOVED TAGS SELECTION//
+  const productTagsToRemove = productTags
+      .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
+      .map(({ id }) => id);
+//BOTH ACTIONS//
+  return Promise.all([
+      ProductTag.destroy({ where: { id: productTagsToRemove } }),
+      ProductTag.bulkCreate(newProductTags),
+    ]);
+  })
     .then((updatedProductTags) => res.json(updatedProductTags))
-    .catch((err) => {
-//CONSOLE.LOG ERROR//
-      res.status(400).json(err);
+      .catch((err) => {
+  res.status(200).json({ message: "Success ✅ Product data updated ✅"});
     });
   });
-
+//DELETE SINGLE PRODUCT --> ID// 
   router.delete('/:id', (req, res) => {
-//DELETE SINGLE PRODUCT --> ID//
-  Product.destroy({
-    where: {
-      id: req.params.id
+    Product.destroy({
+      where: {
+        id: req.params.id
     }
-  })
+    })
     .then(productData => {
       if (!productData) {
         res.status(404).json({ message: "Error❗ No product found❗⛔"});
         return;
       }
-      res.json({ message: "Warning❗⛔ Category deleted❗❌"});
+      res.json({ message: "Warning❗⛔ Product deleted❗❌"});
     })
     .catch(err => {
       console.log(err);

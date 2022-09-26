@@ -67,7 +67,7 @@
     })
     .then(categoryData => {
       if (!categoryData) {
-        res.status(404).json({ message: "Error❗ No category found❗⛔"});
+        res.status(404).json({ message: "Error❗ No tag found❗⛔"});
         return;
       }
       res.json({ message: "Success ✅ Tag updated ✅"});
@@ -90,7 +90,7 @@
         res.status(404).json({ message: "Error❗ No tag found❗⛔"});
         return;
       }
-      res.json({ message: "Warning❗⛔ Category deleted❗❌"});
+      res.json({ message: "Warning❗⛔ Tag deleted❗❌"});
     })
     .catch(err => {
       console.log(err);
